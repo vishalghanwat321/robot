@@ -1,0 +1,23 @@
+server:
+   port : 8082
+
+##Postgres DataSource  + JPA
+
+spring:
+  datasource:
+    platform: postgresql
+    name: postgres
+    url: jdbc:postgresql://postgres:5432/postgres
+    username: postgres
+    password: password
+    test-on-borrow: true
+    validation-query: SELECT 1
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+          jdbc:
+              lob:
+                  non_contextual_creation : true
